@@ -1,0 +1,10 @@
+#ifndef __CONFIG_H
+#define __CONFIG_H
+
+/* config.h template for metabuild */
+
+/* note: these aren't actually used, defines are already passed via cmdline */
+
+/*@@CONFIG_INSERTED_HERE@@*/
+
+#endif /* __CONFIG_H */
