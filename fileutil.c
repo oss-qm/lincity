@@ -110,14 +110,14 @@ int lc_save_dir_len;
 static char *lc_temp_filename;
 
 char given_scene[LC_PATH_MAX];
-char colour_pal_file[LC_PATH_MAX];
-char opening_pic[LC_PATH_MAX];
-char graphic_path[LC_PATH_MAX];
-char fontfile[LC_PATH_MAX];
-char opening_path[LC_PATH_MAX];
-char help_path[LC_PATH_MAX];
-char message_path[LC_PATH_MAX];
-char lc_textdomain_directory[LC_PATH_MAX];
+char colour_pal_file[LC_PATH_MAX+11];
+char opening_pic[LC_PATH_MAX+32];
+char graphic_path[LC_PATH_MAX+7];
+char fontfile[LC_PATH_MAX+38];
+char opening_path[LC_PATH_MAX+20];
+char help_path[LC_PATH_MAX+7];
+char message_path[LC_PATH_MAX+256];
+char lc_textdomain_directory[LC_PATH_MAX+7];
 char lincityrc_file[LC_PATH_MAX];
 
 /* The variable make_dir_ok_flag has 2 uses.
@@ -313,12 +313,12 @@ find_libdir (void)
     const char searchfile[] = "colour.pal";
     char *home_dir, *cwd;
     char cwd_buf[LC_PATH_MAX];
-    char filename_buf[LC_PATH_MAX];
+    char filename_buf[LC_PATH_MAX*2];
 
     /* Check 1: environment variable */
     home_dir = getenv ("LINCITY_HOME");
     if (home_dir) {
-	snprintf (filename_buf, LC_PATH_MAX, "%s%c%s", 
+	snprintf (filename_buf, sizeof(filename_buf), "%s%c%s",
 		  home_dir, PATH_SLASH, searchfile);
 	if (file_exists(filename_buf)) {
 	    strncpy (LIBDIR, home_dir, LC_PATH_MAX);
@@ -329,7 +329,7 @@ find_libdir (void)
     /* Check 2: current working directory */
     cwd = getcwd (cwd_buf, LC_PATH_MAX);
     if (cwd) {
-	snprintf (filename_buf, LC_PATH_MAX, "%s%c%s", 
+	snprintf (filename_buf, sizeof(filename_buf), "%s%c%s",
 		  cwd_buf, PATH_SLASH, searchfile);
 	if (file_exists(filename_buf)) {
 	    strncpy (LIBDIR, cwd_buf, LC_PATH_MAX);
@@ -338,7 +338,7 @@ find_libdir (void)
     }
 
     /* Check 3: default (configuration) directory */
-    snprintf (filename_buf, LC_PATH_MAX, "%s%c%s", 
+    snprintf (filename_buf, sizeof(filename_buf), "%s%c%s",
 	      DEFAULT_LIBDIR, PATH_SLASH, searchfile);
     if (file_exists(filename_buf)) {
 	strncpy (LIBDIR, DEFAULT_LIBDIR, LC_PATH_MAX);

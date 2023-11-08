@@ -531,7 +531,7 @@ struct GROUP main_groups[NUM_OF_GROUPS] =
 
 void init_types(void)
 {
-    char png_file[LC_PATH_MAX], txt_file[LC_PATH_MAX];
+    char png_file[LC_PATH_MAX*2], txt_file[LC_PATH_MAX*2];
     sprintf (png_file, "%s%c%s", opening_path, PATH_SLASH, "icons.png");
     sprintf (txt_file, "%s%c%s", opening_path, PATH_SLASH, "iconlist.txt");
 

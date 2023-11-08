@@ -791,7 +791,7 @@ draw_small_yellow_bezel (int x, int y, int h, int w)
 void
 load_fonts()
 {
-    char s[LC_PATH_MAX];
+    char s[LC_PATH_MAX*2];
     int i;
     FILE *inf;
     /* main_font */

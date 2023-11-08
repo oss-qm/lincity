@@ -163,7 +163,7 @@ start_image_text (void)
 void
 si_scroll_text (void)
 {
-  char s[LC_PATH_MAX], line1[100], line2[100], line3[100], c;
+  char s[LC_PATH_MAX*2], line1[100], line2[100], line3[100], c;
   int i, l1c = 0, l2c = 0, l3c = 0;
   long t;
   FILE *inf1, *inf2, *inf3;

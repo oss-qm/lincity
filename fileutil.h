@@ -9,7 +9,6 @@
 extern char *lc_save_dir;
 extern char *lc_temp_file;
 extern int lc_save_dir_len;
-//extern int make_dir_ok_flag;
 
 /* Try to find the maximum file name from OS */
 #if defined (_POSIX_PATH_MAX)          /* Posix */
@@ -22,15 +21,13 @@ extern int lc_save_dir_len;
 #define LC_PATH_MAX 4096
 #endif
 
-extern char colour_pal_file[LC_PATH_MAX];
-extern char opening_pic[LC_PATH_MAX];
-extern char graphic_path[LC_PATH_MAX];
-extern char fontfile[LC_PATH_MAX];
-extern char opening_path[LC_PATH_MAX];
-extern char help_path[LC_PATH_MAX];
-extern char message_path[LC_PATH_MAX];
-extern char lc_textdomain_directory[LC_PATH_MAX];
-extern char lincityrc_file[LC_PATH_MAX];
+extern char colour_pal_file[];
+extern char opening_pic[];
+extern char graphic_path[];
+extern char fontfile[];
+extern char opening_path[];
+extern char help_path[];
+extern char message_path[];
 extern char given_scene[LC_PATH_MAX];
 
 void gunzip_file (char *f1, char *f2);
