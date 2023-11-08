@@ -6,11 +6,19 @@
 #ifndef __lcconfig_h__
 #define __lcconfig_h__
 
-#if defined (HAVE_CONFIG_H)
-#include "config.h"
-#elif defined (WIN32)
+#ifdef WIN32
 #include "confw32.h"
+#else
+#include "config.h"
 #endif
+
+#ifdef HAVE_STDINT_H
+
+#include <stdint.h>
+typedef int32_t Int32;
+typedef int16_t Int16;
+
+#else /* HAVE_STDINT_H */
 
 #if (SIZEOF_SHORT==4)
 typedef short Int32;
@@ -29,5 +37,7 @@ typedef int Int16;
 #else
 #error  Int16 is not defined.
 #endif
+
+#endif /* HAVE_STDINT_H */
 
 #endif	/* __lcconfig_h__ */
