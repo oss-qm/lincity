@@ -121,6 +121,7 @@ main (int argc, char *argv[])
 void
 lincity_set_locale (void)
 {
+#if defined (ENABLE_NLS)
     char* locale = NULL;
     char* localem = NULL;
 #if defined (WIN32)
@@ -129,7 +130,6 @@ lincity_set_locale (void)
     char language_buf[MAX_LANG_BUF];
 #endif
 
-#if defined (ENABLE_NLS)
 #if defined (WIN32)
     /* Some special stoopid way of setting locale for microsoft gettext */
     language = getenv ("LANGUAGE");

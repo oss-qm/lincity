@@ -108,7 +108,7 @@ remove_scene (char *cname)
 void
 save_city_raw (char *cname)
 {
-    int x, y, z, q, n, p;
+    int x, y, z, n, p;
 #if defined (WIN32)
     FILE *ofile = fopen (cname, "wb");
 #else
@@ -120,7 +120,6 @@ save_city_raw (char *cname)
     }
 
     fprintf (ofile, "%d\n", (int) VERSION_INT);
-    q = sizeof (Map_Point_Info);
     prog_box (_("Saving scene"), 0);
     check_endian ();
     for (x = 0; x < WORLD_SIDE_LEN; x++) {
@@ -340,7 +339,6 @@ save_city (char *cname)
 void
 load_city (char *cname)
 {
-    unsigned long q;
     int i, x, y, z, n, p, ver;
     int num_pbars, pbar_data_size;
     int pbar_tmp;
@@ -365,7 +363,6 @@ load_city (char *cname)
     init_inventory();
     
     print_time_for_year();
-    q = (unsigned long) sizeof (Map_Point_Info);
     prog_box (_("Loading scene"), 0);
 
     for (x = 0; x < WORLD_SIDE_LEN; x++) {
