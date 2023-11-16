@@ -90,7 +90,7 @@ Add support for moving click-drag-release multi-transport.
 Corey has done other nifty stuff too, but he no longer gets a special
 mention for it since he joined as maintainer.
 
-Dàvik <al016950@alumail.uji.es>
+DÃ vik <al016950@alumail.uji.es>
 Add gettext support, and marked up all the embedded strings.
 Contributed the translation into Catalan.
 
