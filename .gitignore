@@ -1,0 +1,10 @@
+/lincity
+/xlincity
+/config.h
+/.build
+/lincity.6.gz
+/lincity.desktop
+*.pc
+*.a
+*.so
+*.so.1
