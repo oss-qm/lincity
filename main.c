@@ -100,9 +100,7 @@ char LIBDIR[LC_PATH_MAX];
 #endif
 #endif
 
-char *lc_save_dir;
 char *lc_temp_file;
-char save_names[10][42];
 
 #ifdef CS_PROFILE
 int prof_countdown = PROFILE_COUNTDOWN;
