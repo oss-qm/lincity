@@ -153,7 +153,7 @@ dialog_box(int arg_color, int argc, ...)
 		db_entry[dbn].text = (char *)lcalloc(1 + linelen);
 		strncpy(db_entry[dbn].text,working_str,linelen);
 		db_entry[dbn].text[linelen] = '\0';
-		working_str = (newline + 1) != '\0' ? newline + 1 : NULL;
+		working_str = (newline[1]) != '\0' ? newline + 1 : NULL;
 	    } else {
 		db_entry[dbn].text = (char *)lcalloc(1 + strlen(working_str));
 		strncpy(db_entry[dbn].text,working_str,strlen(working_str));
