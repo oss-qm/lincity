@@ -41,6 +41,10 @@
 #include <lcx11.h>
 #endif
 
+#if !defined(WIN32)
+#include <locale.h>
+#endif
+
 #include "lctypes.h"
 #include "lin-city.h"
 #include "cliglobs.h"
