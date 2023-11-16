@@ -1057,6 +1057,7 @@ choose_residence (void)
    and set to 1 if the existing transport if the more expensive sort
    (e.g. GROUP_RAIL when overwriting GROUP_ROAD).
 */
+extern inline int mt_erase (int x, int y);
 inline int
 mt_erase(int x, int y)
 {
@@ -1094,6 +1095,7 @@ mt_erase(int x, int y)
     return 0;
 }
 
+extern inline int mt_temp (int x, int y);
 inline int
 mt_temp(int x, int y)
 {
@@ -1128,6 +1130,7 @@ mt_temp(int x, int y)
     return 0;
 }
 
+extern inline int mt_perm (int x, int y);
 inline int
 mt_perm(int x, int y)
 {
