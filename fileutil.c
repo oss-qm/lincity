@@ -1,4 +1,4 @@
- /* ---------------------------------------------------------------------- *
+/* ---------------------------------------------------------------------- *
  * fileutil.c
  * This file is part of lincity.
  * Lincity is copyright (c) I J Peters 1995-1997, (c) Greg Sharp 1997-2001.
@@ -550,11 +550,7 @@ init_path_strings (void)
 
     /* Path for localization */
 #if defined (ENABLE_NLS)
-#if defined (WIN32)
     sprintf (lc_textdomain_directory, "%s%c%s", LIBDIR, PATH_SLASH, "locale");
-#else
-    strcpy (lc_textdomain_directory, LOCALEDIR);
-#endif
     dm = bindtextdomain (PACKAGE, lc_textdomain_directory);
     debug_printf ("Bound textdomain directory is %s\n", dm);
     td = textdomain (PACKAGE);
